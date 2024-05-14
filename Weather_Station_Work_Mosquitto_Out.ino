@@ -16,20 +16,13 @@ MQUnifiedsensor MQ135(placa, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
 
 #define LIGHT_SENSOR_PIN 34
 
-// WiFi iphone
-//const char *ssid = "Omiros"; // Enter your WiFi name
-//const char *password = "Veronica";  // Enter WiFi password
-// WiFi home
-//const char *ssid = "Jungle Chaos"; // Enter your WiFi name
-//const char *password = "!nemesis@";  // Enter WiFi password
 // WiFi work
 const char *ssid = "DATA"; // Enter your WiFi name
-const char *password = "5a8nunchnendf36t";  // Enter WiFi password
+const char *password = "xxxxxxx";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "192.168.1.7";
-//const char *mqtt_broker = "2a02:586:183a:8ab7:7ef1:4587:f8b0:ee4b";
-//const char *mqtt_broker = "94.67.65.234";//inside sensors topics
+const char *mqtt_broker = "xxx.xxx.xxx.xxx";
+
 const char *topicTHome = "Omiros/Work/temperatureOut";
 const char *topicHHome = "Omiros/Work/humidityOut";
 const char *topicAHome = "Omiros/Work/airOut";
@@ -37,9 +30,9 @@ const char *topicTolueneWorkOut = "Omiros/Work/airTolueneOut";
 const char *topicNH4WorkOut = "Omiros/Work/NH4Out";
 const char *topicLightWorkOut = "Omiros/Work/lightOut";
 
-const char *mqtt_username = "perseas";
-const char *mqtt_password = "veronica";
-const int mqtt_port = 55555;
+const char *mqtt_username = "username";
+const char *mqtt_password = "xxxxxx";
+const int mqtt_port = 1883;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -53,7 +46,6 @@ void setup() {
  // Set software serial baud to 115200;
  Serial.begin(115200);
  dht.begin();
-//WiFi.softAPenableIpV6();WiFi.enableIpV6();
 //Set math model to calculate the PPM concentration and the value of constants
   MQ135.setRegressionMethod(1); //_PPM =  a*ratio^b
  
@@ -91,9 +83,7 @@ void setup() {
          delay(2000);
      }
  }
- // publish and subscribe
- //client.publish(topic, "Temperature is 20!");
- //client.subscribe(topic);
+ 
 }
 
 void callback(char *topicTHome, byte *payload, unsigned int length) {
@@ -123,18 +113,14 @@ if (currentTime - previousTime_readSensors >= eventTime_readSensors)
     ReadSensorsAndPublish();
     previousTime_readSensors = currentTime;
 }
-
 }
-
 void ReadSensorsAndPublish(){
-  // Ελέγξε αν η σύνδεση WiFi χάθηκε και προσπάθησε να συνδεθείς ξανά
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("WiFi connection lost, attempting to reconnect...");
-    connectToWiFi(); // Προσπάθησε να συνδεθείς στο WiFi ξανά
+    connectToWiFi(); 
   }
-  // Ελέγξε αν η σύνδεση με τον broker MQTT χάθηκε και προσπάθησε να επανασυνδεθείς
   if (!client.connected()) {
-    reconnectMqtt(); // Προσπάθησε να επανασυνδεθείς στον broker MQTT
+    reconnectMqtt(); 
   }
 
   // Reading temperature or humidity takes about 250 milliseconds!
@@ -218,8 +204,6 @@ void connectToWiFi(){
     Serial.print(WiFi.localIP());
     Serial.print(", RRSI: ");
     Serial.println(WiFi.RSSI());
-    //Serial.print(", IPv6: ");
-    //Serial.print(WiFi.localIPv6());
 }
 
 void reconnectMqtt() {
