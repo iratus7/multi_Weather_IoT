@@ -1,4 +1,4 @@
-#include <WiFi.h>
+na#include <WiFi.h>
 #include <PubSubClient.h>
 #include <MQUnifiedsensor.h>
 #include "DHT.h"
@@ -29,8 +29,8 @@ const char *topicTolueneHome = "Omiros/Home/airToluene";
 const char *topicNH4Home = "Omiros/Home/NH4";
 const char *topicLightHome = "Omiros/Home/light";
 
-const char *mqtt_username = "perseas";
-const char *mqtt_password = "veronica";
+const char *mqtt_username = "username";
+const char *mqtt_password = "xxxxxxxx";
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
