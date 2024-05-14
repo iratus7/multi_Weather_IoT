@@ -3,6 +3,7 @@ The project aims to study, design and implement an IoT system that will monitor 
 Temperature, Humidity, Luminosity, Αir quality(CO2, Toluene, NH4) will be collected so the system will allow the visualization of the state of the environment at the points of interest. We also monitoring the server health. We can compare in real and past time the different environments. We can see the architecture in the following image.
 
 ![image](https://github.com/iratus7/multi_Weather_IoT/assets/2788154/b0015f29-73e4-47e2-8fb5-003d7f5673fa)
+
 Also we can see the connectivity.
 
 ![image](https://github.com/iratus7/multi_Weather_IoT/assets/2788154/27b9966d-bd7f-4be4-98e7-8fb01256a78e)
