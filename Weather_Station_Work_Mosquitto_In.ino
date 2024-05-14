@@ -16,20 +16,13 @@ MQUnifiedsensor MQ135(placa, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
 
 #define LIGHT_SENSOR_PIN 34
 
-// WiFi iphone
-//const char *ssid = "Omiros"; // Enter your WiFi name
-//const char *password = "Veronica";  // Enter WiFi password
-// WiFi home
-//const char *ssid = "Jungle Chaos"; // Enter your WiFi name
-//const char *password = "!nemesis@";  // Enter WiFi password
 // WiFi work
 const char *ssid = "DATA"; // Enter your WiFi name
-const char *password = "5a8nunchnendf36t";  // Enter WiFi password
+const char *password = "xxxxxxxxx";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "192.168.1.7";
-//const char *mqtt_broker = "2a02:586:183a:8a56:3de2:be4a:c849:6987";
-//const char *mqtt_broker = "94.67.65.234";
+const char *mqtt_broker = "xxx.xxx.xxx.xxxx";
+
 //inside sensors topics
 const char *topicTHome = "Omiros/Work/temperatureIn";
 const char *topicHHome = "Omiros/Work/humidityIn";
@@ -38,9 +31,9 @@ const char *topicTolueneWorkIn = "Omiros/Work/airTolueneIn";
 const char *topicNH4WorkIn = "Omiros/Work/NH4In";
 const char *topicLightWorkIn = "Omiros/Work/lightIn";
 
-const char *mqtt_username = "perseas";
-const char *mqtt_password = "veronica";
-const int mqtt_port = 55555;
+const char *mqtt_username = "username";
+const char *mqtt_password = "xxxxxxx";
+const int mqtt_port = 1883;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
