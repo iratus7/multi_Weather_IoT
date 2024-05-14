@@ -86,9 +86,7 @@ void setup() {
          delay(2000);
      }
  }
- // publish and subscribe
- //client.publish(topic, "Temperature is 20!");
- //client.subscribe(topic);
+
 }
 
 void callback(char *topicTHome, byte *payload, unsigned int length) {
