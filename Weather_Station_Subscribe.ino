@@ -11,29 +11,22 @@ int redPinOut = 8;
 int greenPinOut = 9;
 int bluePinOut = 10;
 byte mac[6];
-//char ssid[] = "Jungle Chaos";    // your network SSID (name)
-//char pass[] = "!nemesis@";    // your network password 
-// WiFi iphone
-//char ssid[] = "Omiros"; // Enter your WiFi name
-//char pass[] = "Veronica";  // Enter WiFi password
+
 // WiFi work
 char ssid[] = "DATA"; // Enter your WiFi name
-char pass[] = "5a8nunchnendf36t";  // Enter WiFi password
+char pass[] = "XXXXXXXX";  // Enter WiFi password
 
-char mqtt_user[] = "perseas";
-char mqtt_pass[] = "veronica";
+char mqtt_user[] = "username";
+char mqtt_pass[] = "XXXXXXX";
 
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
   float temperature = 0.0;
   float temperatureIn = 0.0;
   float temperatureOut = 0.0;
-//const char *mqtt_broker = "94.67.65.234";
 
-//const char broker[] = "de2.localto.net";
-//const char broker[] = "2a02:586:183a:8ab7:7ef1:4587:f8b0:ee4b";
-const char broker[] = "192.168.1.7";
-int        port     = 55555;
+const char broker[] = "xxx.xxx.xxx.xxx";
+int        port     = 1883;
 const char subscribe_topic[]  = "Omiros/Home/temperature";
 const char subscribe_topicIn[]  = "Omiros/Work/temperatureIn";
 const char subscribe_topicOut[]  = "Omiros/Work/temperatureOut";
@@ -182,11 +175,7 @@ else {
 
   delay(1000);
 
-  // send message, the Print interface can be used to set the message contents
-  // delay(3000);
-  // mqttClient.beginMessage(publish_topic);
-  // mqttClient.print(random(1000));
-  // mqttClient.endMessage();
+ 
 
 }
 
